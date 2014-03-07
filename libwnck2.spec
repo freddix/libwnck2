@@ -1,7 +1,7 @@
 Summary:	General Window Manager interfacing for GNOME utilities
 Name:		libwnck2
 Version:	2.30.7
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libwnck/2.30/libwnck-%{version}.tar.xz
@@ -43,7 +43,7 @@ libwnck API documentation.
 %patch0 -p1
 
 # kill gnome common deps
-sed -i -e 's/GNOME_COMPILE_WARNINGS.*//g'	\
+%{__sed} -i -e 's/GNOME_COMPILE_WARNINGS.*//g'	\
     -i -e 's/GNOME_MAINTAINER_MODE_DEFINES//g'	\
     -i -e 's/GNOME_COMMON_INIT//g'		\
     -i -e 's/GNOME_DEBUG_CHECK//g' configure.ac
