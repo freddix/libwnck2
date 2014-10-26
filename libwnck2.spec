@@ -1,7 +1,7 @@
 Summary:	General Window Manager interfacing for GNOME utilities
 Name:		libwnck2
 Version:	2.30.7
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libwnck/2.30/libwnck-%{version}.tar.xz
@@ -68,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang libwnck
 
